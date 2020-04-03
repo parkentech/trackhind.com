@@ -1,0 +1,436 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>AIS-140 GPS Tracking Devices & IRNSS VTS Devices Dealer – Track Hind</title>
+
+    <!-- Meta tag Keywords -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="Description" content="Track Hind is government approved AIS-140 GPS tracking devices & IRNSS VTS devices manufacturer and dealer In Jaipur, Rajasthan. " />   
+    <meta name="keywords" content="AIS-140 GPS Tracking Devices, IRNSS VTS Devices,Track Hind,Track Hind jaipur,VTS Company In Jaipur,GPS Company,VTS Company, GPS Devices, GPS Devices In jaipur, Track Hind VTS,VTS Track Hind,Aravali VTS,VTS Aravali,VTS Aravali jaipur,Aravali Track Hind,Track Hind Aravali,Track Hind aravali VTS,VTS Service in india,GPS,GPS Tracker, GPS Tracking Device in Jaipur,GPS Devices" />
+    <script type="application/x-javascript">
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <!--// Meta tag Keywords -->
+
+    <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="all" /><!-- for testimonials -->
+    <!-- css files -->
+    <link rel="stylesheet" href="css/bootstrap.css"> <!-- Bootstrap-Core-CSS -->
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="all" /> <!-- Style-CSS -->
+    <link rel="stylesheet" href="css/fontawesome-all.css"> <!-- Font-Awesome-Icons-CSS -->
+    <link rel="stylesheet" href="css/dropdown.css"> <!-- Bootstrap-Core-CSS -->
+    <!-- //css files -->
+    <!-- web-fonts -->
+    <link href="//fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=latin-ext" rel="stylesheet">
+    <!-- //web-fonts -->
+
+
+    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+
+
+    <script type="text/javascript">
+        $(function () {
+            $.ajax({
+                type: "POST",
+                url: "http://sales.trackhind.com/webservice.asmx/getStateList",
+                data: '{}',
+                crossDomain: true,
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (r) {
+                   // alert("Found");
+                   // var ddlCustomers = $("[id*=ddlGarden]");
+                    $(".gardens").empty().append('<option selected="selected" value="0">Please select</option>');
+                    $.each(r.d, function () {                       
+                        $(".gardens").append($("<option></option>").val(this['Value']).html(this['Text']));
+                    });
+                }
+            });
+        });
+        function getComboA(a) {
+            var x = (a.value || a.options[a.selectedIndex].value);  //crossbrowser solution =)
+            //alert(x);
+        
+            
+           
+            $.ajax({
+                type: "POST",
+                url: "http://sales.trackhind.com/webservice.asmx/getCityList",
+                data: '{StateName:"' + x + '"}',
+                crossDomain: true,
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (r) {
+                    // alert("Found");
+                    // var ddlCustomers = $("[id*=ddlGarden]");
+                    $(".District").empty().append('<option selected="selected" value="0">Please select</option>');
+                    $.each(r.d, function () {
+
+                        $(".District").append($("<option></option>").val(this['Value']).html(this['Text']));
+                    });
+                },
+                fail: function (r) {
+                    $(".District").empty().append('<option selected="selected" value="0">Please select</option>');
+                    alert("Not Found");
+                }
+            });
+
+        }
+        function getSearch() {
+            tbl = document.getElementById('tbl');
+            $("#tbl").find("tr:gt(0)").remove();
+            var city = "1";
+            var state = "8";
+            var pin=""
+            //alert("Searching");
+            var e = document.getElementById("state");
+            state = e.options[e.selectedIndex].value;
+            //alert(state);
+            var e1 = document.getElementById("District");
+            city = e1.options[e1.selectedIndex].value;
+           // alert(city);
+           // alert("Searching");
+            $.ajax({
+                type: "POST",
+                url: "http://sales.trackhind.com/webservice.asmx/GetDealerSearch",
+                data: '{state:"' + state + '",city:"' + city + '",pincode:"' + pin + '"}',
+                crossDomain: true,
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    for (var i = 0; i < response.Data.length ; i++) {
+                        addRow(tbl, response.Data[i].name, response.Data[i].contactno, response.Data[i].address, response.Data[i].state, response.Data[i].city, response.Data[i].pin);
+                    }
+                    
+                },
+                fail: function (r) {
+                    
+                }
+            });
+
+        }
+
+        function addCell(tr, val) {
+            var td = document.createElement('td');
+
+            td.innerHTML = val;
+
+            tr.appendChild(td)
+        }
+
+
+        function addRow(tbl, val_1, val_2, val_3, val_4, val_5, val_6) {
+            var tr = document.createElement('tr');
+
+            addCell(tr, val_1);
+            addCell(tr, val_2);
+            addCell(tr, val_3);
+            addCell(tr, val_4);
+            addCell(tr, val_5);
+            addCell(tr, val_6);
+
+            tbl.appendChild(tr)
+        }
+    </script>
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-151336237-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-151336237-1');
+</script>
+</head>
+
+<body >
+
+    <!--Header-->
+    <header class="header">
+        <div class="container agile-banner_nav">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="https://trackhind.com"><img src="images/logo.png" style="width:73%" /><!--Career Corp <span class="display">Digital technology--></span></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item ">
+                            <a class="nav-link" href="https://trackhind.com">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://trackhind.com/Product.html">Products</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://trackhind.com/Gallery.html">Latest</a>
+                        </li>
+                      <!-- dropdown start -->
+                      <li class="dropdown">
+                        <a href="#" class="nav-link" id="dropdownMenu2" data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false">
+                             Download&#9662;</a>
+                        <ul class="dropdown-menu " aria-labelledby="dropdownMenu2">
+                            <li class="nav-item drophover"><a class="nav-link"   target="_blank" href="https://trackhind.com/AIS 140 Brochure/index.html">AIS 140.</a></li>
+                            <li class="nav-item drophover"><a class="nav-link" href="https://trackhind.com/Brochure/index.html"  target="_blank">Brochure</a></li>
+                        </ul>
+                      </li>
+                      <!--  dropdown end -->
+                         <li class="nav-item ">
+                            <a class="nav-link" href="https://trackhind.com/About.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://trackhind.com/Contact.html">Contact</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="http://trackhind.com/FindDealer.html">FindDealer</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!--Header--> 
+  
+    <!-- Testimonials -->
+    <section class="testimonials py-5" style="background-image: url(images/bg2.jpg);">
+            <div style="text-align: center;"><h2>Find Your Dealer</h2></div>
+        <div class="container py-lg-5">           
+            <div class="row">
+                    <div class="col-md-3">                 
+                            <div>
+                                <h5 style="font-family:serif;"><b>Type</b></h5>
+                                <select class="custom-select" id="select">
+                                    <option value="" disabled selected>Choose your option</option>
+                                    <option value="1">RTO Office</option>
+                                    <option value="2">As Dealer</option>                                       
+                                </select>
+                            </div>
+                      </div>
+              <div class="col-md-3">                 
+                    <div>
+                        <h5 style="font-family:serif;"><b>State</b></h5>
+                        <!-- <select class="custom-select" id="select">
+                            <option value="" disabled selected>Choose your State</option>
+                            <option value="1">Punjab</option>
+                            <option value="2">Rajasthan</option>      
+                            <option value="2">Haryana</option>                                     
+                            <option value="2">Andra Pradesh</option>    
+                            <option value="2">Uttar Pradesh</option>    
+                        </select> -->
+                        <select class="gardens custom-select" id="state" name="state" onchange="getComboA(this)"></select>
+                    </div>
+              </div>
+              <div class="col-md-3">
+                <div>
+                        <h5 style="font-family:serif;"><b>District</b></h5>
+                    <select class="District custom-select" id="District" name="District" ></select>
+                    <!--<select class="custom-select" id="select">
+                        <option value="" disabled selected>Choose your District</option>
+                        <option value="1">Meerut</option>
+                        <option value="2">Kanpur</option>         
+                        <option value="1">Jaipur</option>
+                        <option value="2">Jodhpur</option>                                
+                        <option value="1">Amritsar</option>
+                        <option value="2">Ganganagar</option>  
+                    </select>-->
+                </div>
+              </div>
+            <div class="col-md-3">
+                    <h5 style="font-family:serif;"><b>Pin Code</b></h5>               
+                <div class="form-group">
+                       <input type="number" class="form-control input " placeholder="Enter your Pin" />          
+                </div>
+            </div>
+            <div class="col-md-12"style="text-align: center;margin-top:22px">
+                <button type="button" class="btnSearch" value="Search" onclick="getSearch()">Search</button>
+            </div>
+            </div>
+        </div>
+    </section>
+<!-- find dealer end -->
+<!-- find dealer detail start -->
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                    <table class="table table-striped" id="tbl">
+                            <thead style="background-color: #002c5f;color:white;">
+                              <tr>
+                                <th scope="col">Dealer Name</th>
+                                <th scope="col">Contact No.</th>
+                                <th scope="col">Address</th>
+                                <th scope="col">State</th>
+                                <th scope="col">City</th>                               
+                                <th scope="col">Pin Code</th>
+                              </tr>
+                            </thead>
+                            <tbody id="tblBoddy">
+                              <!--<tr>
+                                <td>Ram</td>
+                                <td>1234567890</td>
+                                <td>xdbxgn klghv</td>
+                                <td>Rajasthan</td>
+                                <td>Jodhpur</td>
+                                <td>247003</td>
+                              </tr>
+                              <tr>
+                                <td>Shyam</td>
+                                <td>1234567890</td>
+                                <td>dsfvgbkjbgfsgb</td>
+                                <td>Rajasthan</td>
+                                <td>Jaipur</td>
+                                <td>247002</td>
+                              </tr>
+                              <tr>
+                                <td>Mohan</td>
+                                <td>1234567890</td>
+                                <td>gfjbgkfjgblfbfh</td>
+                                <td>Rajasthan</td>
+                                <td>Ganganagar</td>
+                                <td>247001</td>
+                              </tr>-->
+                            </tbody>
+                          </table>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!--<section >
+            <div class="container">              
+                <div class="row ">
+                    <div class="col-md-12 contact_left "style="border:none;">
+                        <iframe src="https://www.google.com/maps/embed/v1/place?q=E-81+Police Path+Nirman Nagar+Ajmer Road+Jaipur+302019.&key=AIzaSyB_b3BxhzkeLE5G3Z7ewRnDTCqypfoUtBQ"></iframe>
+                    </div>                                 
+                </div>
+            </div>
+    </section>-->
+
+   
+    <!-- //project -->
+  
+    <!-- copyright start -->
+    <div class="copyright py-4" style="margin-top: 3%;">
+        <div class="container">
+            <div class="copyrightgrids row">
+                <div class="col-lg-12 col-12">
+                    <p>© 2019 Track Hind . All Rights Reserved | Design by <a href="http://www.par-ken.com" target="_blank">Parken Solution Pvt Ltd</a></p>
+                </div>
+              
+            </div>
+        </div>
+    </div>
+    <!-- //copyright -->
+    <!-- Vertically centered Modal -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-uppercase text-center" id="exampleModalLongTitle"> Career Corp</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="images/banner.jpg" class="img-fluid mb-3" alt="Modal Image" />
+                    Vivamus eget est in odio tempor interdum. Mauris maximus fermentum arcu, ac finibus ante. Sed mattis risus at ipsum elementum, ut auctor turpis cursus. Sed sed odio pharetra, aliquet velit cursus, vehicula enim. Mauris porta aliquet magna, eget laoreet ligula.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //Vertically centered Modal -->
+    <!-- js-scripts -->
+    <!-- js -->
+    <script defer src="js/dropdown.js"></script>
+    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script> <!-- Necessary-JavaScript-File-For-Bootstrap -->
+    <!-- //js -->
+    <!-- odometer-script -->
+    <script src="js/odometer.js"></script>
+    <script>
+        window.odometerOptions = {
+            format: '(ddd).dd'
+        };
+    </script>
+    <script>
+        setTimeout(function () {
+            jQuery('#w3l_stats1').html(25);
+        }, 1500);
+    </script>
+    <script>
+        setTimeout(function () {
+            jQuery('#w3l_stats2').html(330);
+        }, 1500);
+    </script>
+    <script>
+        setTimeout(function () {
+            jQuery('#w3l_stats3').html(542);
+        }, 1500);
+    </script>
+    <script>
+        setTimeout(function () {
+            jQuery('#w3l_stats4').html(222);
+        }, 1500);
+    </script>
+    <!-- //odometer-script -->
+    <!-- start-smoth-scrolling -->
+    <script src="js/SmoothScroll.min.js"></script>
+    <script type="text/javascript" src="js/move-top.js"></script>
+    <script type="text/javascript" src="js/easing.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1000);
+            });
+        });
+    </script>
+    <!-- here stars scrolling icon -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            /*
+				var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear'
+				};
+			*/
+
+            $().UItoTop({ easingType: 'easeOutQuart' });
+
+        });
+    </script>
+    <!-- //here ends scrolling icon -->
+    <!-- start-smoth-scrolling -->
+    <!-- FlexSlider-JavaScript -->
+    <script defer src="js/jquery.flexslider.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            SyntaxHighlighter.all();
+        });
+        $(window).load(function () {
+            $('.flexslider').flexslider({
+                animation: "slide",
+                start: function (slider) {
+                    $('body').removeClass('loading');
+                }
+            });
+        });
+    </script>
+    <!-- //FlexSlider-JavaScript -->
+    <!-- //js-scripts -->
+
+
+</body>
+</html>
